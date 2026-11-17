@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>VVSEAI Annual Meeting 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Programme for Vertex Ventures Southeast Asia &amp; India's Annual Meeting 2026 and Founders Day, 23–24 November 2026, Four Seasons Hotel Singapore.">
+<meta name="theme-color" content="#020f45">
+<meta name="apple-mobile-web-app-title" content="Vertex AGM 2026">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: the key visual as a centred masthead (logo, title, date, as on the KV artboard), then the programme.
+   Phone: one column with a sticky day switcher and a Now/Next strip above the schedule, venue guide last.
+   Desktop (>=1000px): sticky sidebar (days, live card, venue) beside the schedule. Single dark theme taken from the KV. */
+:root {
+  --bg: #020f45;
+  --bg-deep: #030b36;
+  --raise: rgba(70, 120, 255, .08);
+  --raise-strong: rgba(70, 120, 255, .16);
+  --ink: #ffffff;
+  --ink-2: #c9d7ff;
+  --muted: #8fa3d9;
+  --line: rgba(120, 165, 255, .18);
+  --rule: rgba(140, 190, 255, .55);
+  --cyan: #5fd2ff;
+  --blue: #1f5dff;
+  --live: #5ef0c0;
+  --on-accent: #02113f;
+
+  --font-display: "Barlow", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+  --col-time: 5.2rem;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg-deep); }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #021552 0%, var(--bg) 35%, var(--bg-deep) 100%);
+  color: var(--ink);
+  font: 400 15px/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+p, h1, h2, h3, ol { margin: 0; }
+ol { padding: 0; list-style: none; }
+a { color: var(--cyan); }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- masthead ---------- */
+.hero {
+  position: relative; overflow: hidden; text-align: center;
+  background: var(--bg) url("kv.jpg") 50% 62% / cover no-repeat;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(2, 15, 69, .88) 0%, rgba(2, 15, 69, .62) 36%, rgba(2, 15, 69, 0) 58%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(2, 15, 69, .55) 14%, rgba(2, 15, 69, 0) 40%);
+}
+.hero-inner {
+  position: relative;
+  max-width: 1160px; margin-inline: auto;
+  padding-left: var(--gl); padding-right: var(--gr);
+  padding-block: 28px 120px;
+  display: grid; justify-items: center; gap: 6px;
+}
+.logo { width: 168px; height: auto; margin-bottom: 14px; }
+.eyebrow {
+  font: 600 12px/1 var(--font-display); letter-spacing: .32em; text-transform: uppercase;
+  color: var(--cyan); padding-left: .32em;
+}
+.hero h1 {
+  font: 700 clamp(1.8rem, 7.4vw, 3.6rem)/1.02 var(--font-display);
+  letter-spacing: .02em; text-transform: uppercase; text-wrap: balance;
+  text-shadow: 0 0 28px rgba(95, 170, 255, .45);
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; margin-top: 6px;
+  font: 500 15px/1.4 var(--font-display); letter-spacing: .03em; color: var(--ink-2);
+  text-shadow: 0 1px 12px rgba(2, 15, 69, .95);
+}
+.m-short { display: none; }
+.hero-meta sup { font-size: .62em; }
+.hero-meta > span + span::before { content: "·"; margin-right: 12px; color: var(--cyan); }
+
+/* ---------- layout ---------- */
+.layout {
+  display: flex; flex-direction: column;
+  max-width: 760px; margin: -56px auto 0; position: relative;
+  padding-left: var(--gl); padding-right: var(--gr);
+}
+.side { display: contents; }
+.tabs-sentinel { order: 0; height: 0; }
+.tabs { order: 1; }
+.live { order: 2; }
+.days { order: 3; min-width: 0; }
+.venue { order: 4; }
+
+/* ---------- day switcher ---------- */
+.tabs {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  margin-inline: calc(-1 * var(--gl)) calc(-1 * var(--gr));
+  padding-left: var(--gl); padding-right: var(--gr);
+  transition: background-color .2s, box-shadow .2s;
+}
+.tabs.is-stuck {
+  background: rgba(2, 15, 69, .94);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line), 0 12px 28px rgba(0, 4, 30, .45);
+}
+.tabs-inner { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+.tabs button {
+  appearance: none; border: 0; background: none; cursor: pointer; font: inherit;
+  color: var(--muted); text-align: left;
+  padding: 12px 4px 11px; display: grid; gap: 2px;
+  border-bottom: 3px solid transparent; margin-bottom: -1px;
+}
+.tabs button[aria-selected="true"] {
+  color: var(--ink); border-bottom-color: var(--cyan);
+  box-shadow: 0 10px 18px -14px var(--cyan);
+}
+.tab-day { font: 600 11px/1.2 var(--font-display); letter-spacing: .18em; text-transform: uppercase; }
+.tab-name { font: 600 18px/1.2 var(--font-display); }
+.tabs button[aria-selected="true"] .tab-day { color: var(--cyan); }
+
+/* ---------- live ---------- */
+.live {
+  appearance: none; width: 100%; text-align: left; cursor: pointer; font: inherit; color: var(--ink);
+  margin-top: 16px; display: grid; gap: 8px;
+  padding: 13px 16px; border-radius: 12px;
+  border: 1px solid rgba(94, 240, 192, .4);
+  background: linear-gradient(90deg, rgba(94, 240, 192, .16), rgba(94, 240, 192, .04));
+  box-shadow: 0 0 26px rgba(94, 240, 192, .12);
+}
+.live-title { display: none; }
+.live > span { display: flex; gap: 12px; align-items: baseline; min-width: 0; }
+.live-label {
+  flex: none; width: 3.7rem; white-space: nowrap;
+  font: 700 11px/1 var(--font-display); letter-spacing: .18em; text-transform: uppercase; color: var(--live);
+}
+.live-next .live-label { color: var(--cyan); }
+.live-text { min-width: 0; font-size: 14.5px; line-height: 1.35; }
+.live-text small { color: var(--muted); font-size: 12.5px; }
+.live-text .li { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.live-now .live-label::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--live); margin-right: 6px; vertical-align: 1px;
+  animation: pulse 1.8s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(94, 240, 192, .6); }
+  100% { box-shadow: 0 0 0 8px rgba(94, 240, 192, 0); }
+}
+
+/* ---------- schedule ---------- */
+.day { padding-block: 6px 8px; }
+.day-head { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.block { margin-top: 24px; }
+.b-head {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+  padding-bottom: 9px; border-bottom: 1.5px solid var(--rule);
+}
+.b-head h3 { font: 700 13px/1.2 var(--font-display); letter-spacing: .18em; text-transform: uppercase; }
+.aud {
+  font: 700 10.5px/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 8px 4px; border-radius: 999px;
+}
+.aud-lp { background: var(--ink-2); color: var(--on-accent); }
+.aud-both { color: var(--cyan); box-shadow: inset 0 0 0 1px rgba(95, 210, 255, .7); }
+.aud-f { background: var(--cyan); color: var(--on-accent); }
+.b-loc { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-2); }
+.b-note {
+  margin-top: 10px; padding: 9px 12px; border-radius: 8px;
+  background: var(--raise); color: var(--ink-2); font-size: 13px;
+}
+.b-note b { color: var(--ink); font-weight: 600; }
+.pin { width: 11px; height: 13px; flex: none; color: var(--cyan); }
+
+.s {
+  position: relative;
+  display: grid; grid-template-columns: var(--col-time) minmax(0, 1fr); gap: 0 14px;
+  padding-block: 14px; border-bottom: 1px solid var(--line);
+  scroll-margin-top: 90px;
+}
+.s-time {
+  font: 600 16px/1.25 var(--font-display); font-variant-numeric: tabular-nums; color: var(--ink);
+  display: grid; align-content: start; gap: 2px;
+}
+.s-time small { font-size: 12px; font-weight: 600; color: var(--ink-2); }
+.s-time > span { font: 500 12.5px/1.3 var(--font-display); color: var(--muted); }
+.s-body { display: grid; gap: 3px; min-width: 0; }
+.s-eyebrow { font: 600 11px/1.2 var(--font-display); letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); }
+.s-title { font-weight: 500; font-size: 15.5px; line-height: 1.38; text-wrap: pretty; }
+.s-sub { font-size: 13px; line-height: 1.45; color: var(--muted); }
+.s-sub b { color: var(--ink-2); font-weight: 500; }
+.s-loc { display: flex; align-items: center; gap: 6px; margin-top: 2px; font-size: 12.5px; color: var(--ink-2); }
+.badge {
+  display: inline-block; vertical-align: 2px; margin-left: 8px;
+  font: 700 10px/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase;
+  background: var(--cyan); color: var(--on-accent);
+  padding: 4px 7px 3px; border-radius: 999px; white-space: nowrap;
+}
+
+.s-break .s-title { font-weight: 400; color: var(--muted); }
+.s-break .s-time { color: var(--muted); }
+
+.s-guest, .s.is-now {
+  margin-inline: calc(-1 * var(--gl)) calc(-1 * var(--gr));
+  padding-left: var(--gl); padding-right: var(--gr);
+}
+.s-guest { background: linear-gradient(90deg, rgba(31, 93, 255, .30), rgba(31, 93, 255, .06)); }
+.s-guest::before, .s.is-now::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--cyan); box-shadow: 0 0 12px var(--cyan);
+}
+.s.is-now { background: linear-gradient(90deg, rgba(94, 240, 192, .20), rgba(94, 240, 192, .04)); }
+.s.is-now::before { background: var(--live); box-shadow: 0 0 12px var(--live); }
+.s.is-past { opacity: .45; }
+.flag {
+  justify-self: start; margin-top: 6px;
+  font: 700 10px/1 var(--font-display); font-style: normal; letter-spacing: .14em; text-transform: uppercase;
+  padding: 4px 6px 3px; border-radius: 4px;
+}
+.s.is-now .flag { background: var(--live); color: var(--on-accent); }
+.s.is-next .flag { color: var(--cyan); box-shadow: inset 0 0 0 1px rgba(95, 210, 255, .6); }
+
+/* ---------- venue ---------- */
+.venue { margin-top: 34px; padding-top: 22px; border-top: 1.5px solid var(--rule); display: grid; gap: 14px; }
+.venue h2 { font: 700 13px/1.2 var(--font-display); letter-spacing: .18em; text-transform: uppercase; }
+.addr { display: grid; gap: 3px; font-size: 14px; color: var(--ink-2); }
+.addr-name { font: 600 20px/1.2 var(--font-display); color: var(--ink); }
+.map-link {
+  justify-self: start; margin-top: 10px;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 18px;
+  font: 600 14px/1 var(--font-body); text-decoration: none; color: var(--on-accent);
+  background: var(--cyan); border-radius: 999px; box-shadow: 0 0 22px rgba(95, 210, 255, .35);
+}
+.map-link:hover { background: #8fe0ff; }
+.floors { display: grid; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--raise); }
+.floors li { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr); }
+.floors li + li { border-top: 1px solid var(--line); }
+.lvl {
+  display: grid; place-items: center;
+  font: 700 20px/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--cyan);
+  background: var(--raise-strong); text-shadow: 0 0 12px rgba(95, 210, 255, .6);
+}
+.floors li > div { padding: 11px 14px; display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.floors b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+
+/* ---------- footer ---------- */
+.foot {
+  margin-top: 40px; border-top: 1px solid var(--line);
+  padding-block: 22px 28px; padding-left: var(--gl); padding-right: var(--gr);
+  text-align: center; font-size: 12.5px; color: var(--muted); display: grid; gap: 4px;
+}
+.foot b { color: var(--ink-2); font-weight: 600; }
+
+/* ---------- phones ---------- */
+@media (max-width: 520px) {
+  .hero-inner { padding-block: 20px 160px; gap: 4px; }
+  .logo { width: 126px; margin-bottom: 8px; }
+  .eyebrow { font-size: 11px; }
+  .hero-meta { font-size: 13.5px; gap: 0 10px; margin-top: 4px; }
+  .m-long { display: none; }
+  .m-short { display: inline; }
+  .hero-meta > span + span::before { margin-right: 10px; }
+  .layout { margin-top: -44px; }
+  .tabs button { padding-block: 10px 9px; }
+  .tab-name { font-size: 16.5px; }
+  .live { margin-top: 12px; }
+  .block { margin-top: 20px; }
+}
+
+/* ---------- desktop: sidebar + schedule ---------- */
+@media (min-width: 1000px) {
+  .hero { background-image: url("kv-wide.jpg"); background-position: 50% 60%; }
+  .hero-inner { padding-block: 60px 320px; gap: 8px; }
+  .logo { width: 230px; margin-bottom: 22px; }
+  .eyebrow { font-size: 13px; }
+  .hero-meta { font-size: 18px; margin-top: 10px; }
+  .layout {
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; align-items: start;
+    max-width: 1160px; margin-top: -96px;
+    padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px));
+  }
+  .side {
+    display: flex; flex-direction: column; gap: 18px;
+    position: sticky; top: 24px;
+  }
+  .tabs { position: static; margin: 0; padding: 0; background: none !important; box-shadow: none !important; }
+  .tabs-inner {
+    grid-template-columns: 1fr; border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: rgba(2, 15, 69, .72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  }
+  .tabs button { padding: 16px 20px; border-bottom: 0; margin: 0; border-left: 3px solid transparent; }
+  .tabs button + button { border-top: 1px solid var(--line); }
+  .tabs button[aria-selected="true"] {
+    border-left-color: var(--cyan); box-shadow: none;
+    background: linear-gradient(90deg, rgba(31, 93, 255, .32), rgba(31, 93, 255, .05));
+  }
+  .tab-name { font-size: 21px; }
+  .live { margin: 0; padding: 16px 18px; gap: 12px; }
+  .live-title { display: block; font: 700 12px/1 var(--font-display); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-2); }
+  .live > span { flex-direction: column; gap: 4px; }
+  .live-text { font-size: 15px; }
+  .venue { margin: 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: rgba(2, 15, 69, .6); }
+  .addr-name { font-size: 19px; }
+  .days { padding-top: 96px; }
+  .day { padding-top: 0; }
+  .day-head { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; display: grid; gap: 2px; }
+  .day-head h2 { font: 700 40px/1.05 var(--font-display); letter-spacing: .01em; }
+  .day-head p { font: 500 17px/1.3 var(--font-display); color: var(--ink-2); letter-spacing: .03em; }
+  .block { margin-top: 30px; }
+  :root { --col-time: 7.5rem; }
+  .s { padding-block: 16px; gap: 0 20px; }
+  .s-time { font-size: 18px; }
+  .s-title { font-size: 17px; }
+  .s-sub { font-size: 14px; }
+  .s-guest, .s.is-now { margin-inline: -20px; padding-left: 20px; padding-right: 20px; border-radius: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-now .live-label::before { animation: none; }
+  .tabs { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="logo.png" alt="Vertex Ventures SEA &amp; India" width="736" height="232">
+    <p class="eyebrow">Programme</p>
+    <h1>Annual Meeting 2026</h1>
+    <p class="hero-meta"><span>23<sup>rd</sup>–24<sup>th</sup> <span class="m-long">November</span><span class="m-short">Nov</span> 2026</span><span>Four Seasons Hotel Singapore</span></p>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <div class="tabs-sentinel" aria-hidden="true"></div>
+    <nav class="tabs" aria-label="Programme day">
+      <div class="tabs-inner" role="tablist">
+        <button type="button" role="tab" id="tab-annual-meeting" aria-controls="annual-meeting" aria-selected="true" data-day="annual-meeting"><span class="tab-day">Mon 23 Nov</span><span class="tab-name">Annual Meeting</span></button>
+        <button type="button" role="tab" id="tab-founders-day" aria-controls="founders-day" aria-selected="false" data-day="founders-day"><span class="tab-day">Tue 24 Nov</span><span class="tab-name">Founders Day</span></button>
+      </div>
+    </nav>
+    <button type="button" class="live" id="live" hidden>
+      <b class="live-title">Live programme</b>
+      <span class="live-now"><span class="live-label">Now</span><span class="live-text" id="live-now"></span></span>
+      <span class="live-next"><span class="live-label">Next</span><span class="live-text" id="live-next"></span></span>
+    </button>
+    <section class="venue" aria-labelledby="venue-h">
+      <h2 id="venue-h">Getting around</h2>
+      <div class="addr">
+        <p class="addr-name">Four Seasons Hotel Singapore</p>
+        <p>190 Orchard Boulevard, Singapore 248646</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Four+Seasons+Hotel+Singapore+190+Orchard+Boulevard" target="_blank" rel="noopener">Open in Google Maps <span aria-hidden="true">↗</span></a>
+      </div>
+      <ol class="floors" aria-label="Rooms by floor">
+        <li><span class="lvl">20</span><div><p><b>Windows West</b>LPAC meeting (Mon) · Founders Day (Tue)</p><p><b>Windows East</b>Laser tag (Tue)</p></div></li>
+        <li><span class="lvl">3</span><div><p><b>Nobu</b>Networking dinner (Mon)</p></div></li>
+        <li><span class="lvl">2</span><div><p><b>Ballroom</b>Annual Meeting (Mon)</p><p><b>Ballroom Foyer</b>Founder check-in, lunch and tea breaks (Mon)</p></div></li>
+      </ol>
+    </section>
+  </aside>
+
+  <main class="days">
+    <section class="day" id="annual-meeting" role="tabpanel" aria-labelledby="tab-annual-meeting">
+      <header class="day-head"><h2>Annual Meeting</h2><p>Monday, 23 November 2026</p></header>
+      <div class="block">
+        <div class="b-head"><h3>Morning</h3><span class="aud aud-lp">LPs only</span><p class="b-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Ballroom, Level 2</span></p></div>
+        <ol class="sessions">
+          <li class="s s-break" id="annual-meeting-0" data-date="2026-11-23" data-s="510" data-e="540" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T08:30+08:00">8:30<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T09:00+08:00">9:00&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Registration</p></div>
+          </li>
+          <li class="s" id="annual-meeting-1" data-date="2026-11-23" data-s="540" data-e="545" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T09:00+08:00">9:00<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T09:05+08:00">9:05&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Welcome</p><p class="s-sub">Chua Kee Lock, Managing Partner</p></div>
+          </li>
+          <li class="s" id="annual-meeting-2" data-date="2026-11-23" data-s="545" data-e="570" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T09:05+08:00">9:05<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T09:30+08:00">9:30&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Vertex SEA &amp; India: Opportunity and Future Vision</p><p class="s-sub">Ben Mathias, Managing Partner</p></div>
+          </li>
+          <li class="s s-guest" id="annual-meeting-3" data-date="2026-11-23" data-s="570" data-e="600" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T09:30+08:00">9:30<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T10:00+08:00">10:00&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-eyebrow">Fireside chat</p><p class="s-title">Dilhan Pillay Sandrasegara<span class="badge">Guest speaker</span></p><p class="s-sub">Executive Director &amp; CEO, Temasek Holdings; Chairman, Vertex Holdings<br>In conversation with <b>Ben Mathias</b>, Managing Partner</p></div>
+          </li>
+          <li class="s" id="annual-meeting-4" data-date="2026-11-23" data-s="600" data-e="645" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T10:00+08:00">10:00<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T10:45+08:00">10:45&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Fund V update</p></div>
+          </li>
+          <li class="s s-break" id="annual-meeting-5" data-date="2026-11-23" data-s="645" data-e="660" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T10:45+08:00">10:45<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T11:00+08:00">11:00&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Tea break</p></div>
+          </li>
+          <li class="s" id="annual-meeting-6" data-date="2026-11-23" data-s="660" data-e="685" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T11:00+08:00">11:00<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T11:25+08:00">11:25&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Fund IV update</p></div>
+          </li>
+          <li class="s" id="annual-meeting-7" data-date="2026-11-23" data-s="685" data-e="705" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T11:25+08:00">11:25<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T11:45+08:00">11:45&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Fund III update</p></div>
+          </li>
+        </ol>
+      </div>
+      <div class="block">
+        <div class="b-head"><h3>Midday &amp; afternoon</h3><span class="aud aud-both">LPs &amp; founders</span><p class="b-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Ballroom, Level 2</span></p></div><p class="b-note"><b>Founders:</b> check-in opens at 11:30 am at the Ballroom Foyer, Level 2.</p>
+        <ol class="sessions">
+          <li class="s s-guest" id="annual-meeting-8" data-date="2026-11-23" data-s="705" data-e="745" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T11:45+08:00">11:45<small>&nbsp;am</small></time><span>– <time datetime="2026-11-23T12:25+08:00">12:25&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-eyebrow">Guest talk</p><p class="s-title">From China to the World: Shaping the Future of Computing for Automotive and Robotics<span class="badge">Guest speaker</span></p><p class="s-sub"><b>Dr Yu Kai</b>, Co-Founder, Horizon Robotics</p></div>
+          </li>
+          <li class="s s-break" id="annual-meeting-9" data-date="2026-11-23" data-s="750" data-e="810" data-where="Ballroom Foyer, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T12:30+08:00">12:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T13:30+08:00">1:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Lunch</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Ballroom Foyer, Level 2</span></p></div>
+          </li>
+          <li class="s" id="annual-meeting-10" data-date="2026-11-23" data-s="810" data-e="855" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T13:30+08:00">1:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T14:15+08:00">2:15&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-eyebrow">Portfolio panel</p><p class="s-title">From Wrappers to Workflows: Engineering Defensible Moats in Vertical AI</p><p class="s-sub">Spyne, RapidCanvas and Industrial Mind<br>Moderated by <b>Nikhil Marwaha</b>, Partner</p></div>
+          </li>
+          <li class="s" id="annual-meeting-11" data-date="2026-11-23" data-s="855" data-e="900" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T14:15+08:00">2:15<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T15:00+08:00">3:00&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-eyebrow">Portfolio panel</p><p class="s-title">Beyond the Hype: Scaling Premium Brands in the Social-First Era</p><p class="s-sub">Lunio, myFirst and Basil<br>Moderated by <b>Jessica Koh</b>, Partner</p></div>
+          </li>
+          <li class="s" id="annual-meeting-12" data-date="2026-11-23" data-s="900" data-e="905" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T15:00+08:00">3:00<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T15:05+08:00">3:05&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Wrap-up</p><p class="s-sub">Chua Kee Lock, Managing Partner</p></div>
+          </li>
+          <li class="s s-break" id="annual-meeting-13" data-date="2026-11-23" data-s="905" data-e="930" data-where="Ballroom Foyer, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T15:05+08:00">3:05<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T15:30+08:00">3:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Tea break</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Ballroom Foyer, Level 2</span></p></div>
+          </li>
+        </ol>
+      </div>
+      <div class="block">
+        <div class="b-head"><h3>Late afternoon &amp; evening</h3><span class="aud aud-both">LPs &amp; founders</span></div>
+        <ol class="sessions">
+          <li class="s" id="annual-meeting-14" data-date="2026-11-23" data-s="930" data-e="1050" data-where="Ballroom, Level 2">
+            <p class="s-time"><time datetime="2026-11-23T15:30+08:00">3:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T17:30+08:00">5:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">LP–Founder Speed Dating</p><p class="s-sub">Four 30-minute rounds with portfolio founders</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Ballroom, Level 2</span></p></div>
+          </li>
+          <li class="s" id="annual-meeting-15" data-date="2026-11-23" data-s="930" data-e="1020" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-23T15:30+08:00">3:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T17:00+08:00">5:00&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">LPAC meeting</p><p class="s-sub">LPAC members only</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Windows West, Level 20</span></p></div>
+          </li>
+          <li class="s s-break" id="annual-meeting-16" data-date="2026-11-23" data-s="1050" data-e="1110" data-where="">
+            <p class="s-time"><time datetime="2026-11-23T17:30+08:00">5:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T18:30+08:00">6:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Free and easy</p></div>
+          </li>
+          <li class="s" id="annual-meeting-17" data-date="2026-11-23" data-s="1110" data-e="1290" data-where="Nobu, Level 3">
+            <p class="s-time"><time datetime="2026-11-23T18:30+08:00">6:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-23T21:30+08:00">9:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">LP–Founder Networking Dinner</p><p class="s-sub">With a photo booth and bar</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Nobu, Level 3</span></p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="day" id="founders-day" role="tabpanel" aria-labelledby="tab-founders-day" hidden>
+      <header class="day-head"><h2>Founders Day</h2><p>Tuesday, 24 November 2026</p></header>
+      <div class="block">
+        <div class="b-head"><h3>Morning</h3><span class="aud aud-f">Founders</span><p class="b-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Windows West, Level 20</span></p></div><p class="b-note"><b>Laser tag this morning:</b> please wear covered shoes and dark clothes.</p>
+        <ol class="sessions">
+          <li class="s" id="founders-day-0" data-date="2026-11-24" data-s="510" data-e="540" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T08:30+08:00">8:30<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T09:00+08:00">9:00&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Founder registration</p><p class="s-sub">Please complete the laser tag waiver form</p></div>
+          </li>
+          <li class="s" id="founders-day-1" data-date="2026-11-24" data-s="540" data-e="555" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T09:00+08:00">9:00<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T09:15+08:00">9:15&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Welcome and founder intros</p></div>
+          </li>
+          <li class="s" id="founders-day-2" data-date="2026-11-24" data-s="555" data-e="645" data-where="Windows East, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T09:15+08:00">9:15<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T10:45+08:00">10:45&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Icebreaker: laser tag</p><p class="s-loc"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13.2s4.6-4.3 4.6-7.6A4.6 4.6 0 0 0 1.4 5.6c0 3.3 4.6 7.6 4.6 7.6Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5.6" r="1.6" fill="currentColor"/></svg><span>Windows East, Level 20</span></p></div>
+          </li>
+          <li class="s s-break" id="founders-day-3" data-date="2026-11-24" data-s="645" data-e="660" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T10:45+08:00">10:45<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T11:00+08:00">11:00&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Coffee break</p></div>
+          </li>
+          <li class="s" id="founders-day-4" data-date="2026-11-24" data-s="660" data-e="705" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T11:00+08:00">11:00<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T11:45+08:00">11:45&nbsp;am</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-eyebrow">Fireside chat</p><p class="s-title">Scar Tissue AMA</p><p class="s-sub">Moderated by <b>Chua Joo Hock</b></p></div>
+          </li>
+          <li class="s" id="founders-day-5" data-date="2026-11-24" data-s="705" data-e="750" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T11:45+08:00">11:45<small>&nbsp;am</small></time><span>– <time datetime="2026-11-24T12:30+08:00">12:30&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Founder roundtables</p><p class="s-sub">Peer-group discussions, about five founders per table</p></div>
+          </li>
+          <li class="s" id="founders-day-6" data-date="2026-11-24" data-s="750" data-e="765" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T12:30+08:00">12:30<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-24T12:45+08:00">12:45&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Closing reflections</p><p class="s-sub">Host-led prompts and open sharing</p></div>
+          </li>
+          <li class="s" id="founders-day-7" data-date="2026-11-24" data-s="765" data-e="780" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T12:45+08:00">12:45<small>&nbsp;pm</small></time><span>– <time datetime="2026-11-24T13:00+08:00">1:00&nbsp;pm</time></span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Ecosystem partner intros</p><p class="s-sub">Google, Microsoft, AWS, OpenAI, Anthropic, Databricks and Deel</p></div>
+          </li>
+          <li class="s s-break" id="founders-day-8" data-date="2026-11-24" data-s="780" data-e="840" data-where="Windows West, Level 20">
+            <p class="s-time"><time datetime="2026-11-24T13:00+08:00">1:00<small>&nbsp;pm</small></time><span>– onwards</span><em class="flag" hidden></em></p>
+            <div class="s-body"><p class="s-title">Lunch</p><p class="s-sub">Buffet, with our ecosystem partners joining</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="foot">
+  <p><b>Vertex Ventures Southeast Asia &amp; India</b> · Annual Meeting 2026</p>
+  <p>Programme as of 17 November 2026 and subject to change. All times are Singapore time.</p>
+</footer>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role="tab"]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.day'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.s'));
+  var tabBar = document.querySelector('.tabs');
+  var sentinel = document.querySelector('.tabs-sentinel');
+  var days = document.querySelector('.days');
+  var live = document.getElementById('live');
+  var liveNow = document.getElementById('live-now');
+  var liveNext = document.getElementById('live-next');
+  var DAY_BY_DATE = { '2026-11-23': 'annual-meeting', '2026-11-24': 'founders-day' };
+
+  function scroller() { return document.querySelector('[data-agm-scroller]'); }
+
+  function show(id, fromUser) {
+    var panel = document.getElementById(id);
+    if (!panel || !panel.classList.contains('day')) return;
+    tabs.forEach(function (t) {
+      var on = t.dataset.day === id;
+      t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach(function (p) { p.hidden = p.id !== id; });
+    if (fromUser) { try { history.replaceState(null, '', '#' + id); } catch (e) { } }
+  }
+
+  // When switching days while scrolled into the programme, start the new day from its top.
+  function scrollToDays() {
+    var sc = scroller();
+    var r = days.getBoundingClientRect();
+    var k = days.offsetHeight ? r.height / days.offsetHeight : 1; // scale, for the phone preview frame
+    var sticky = getComputedStyle(tabBar).position === 'sticky';
+    var offset = sticky ? tabBar.offsetHeight + 8 : 24;
+    var top = sc ? (r.top - sc.getBoundingClientRect().top) / k : r.top;
+    if (top < offset) {
+      var cur = sc ? sc.scrollTop : window.scrollY;
+      (sc || window).scrollTo({ top: Math.max(0, cur + top - offset) });
+    }
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(t.dataset.day, true); scrollToDays(); });
+    t.addEventListener('keydown', function (e) {
+      if (['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].indexOf(e.key) < 0) return;
+      e.preventDefault();
+      var fwd = e.key === 'ArrowRight' || e.key === 'ArrowDown';
+      var n = tabs[(i + (fwd ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); show(n.dataset.day, true);
+    });
+  });
+
+  // Tint the day switcher once it sticks to the top of the screen.
+  if ('IntersectionObserver' in window && sentinel) {
+    new IntersectionObserver(function (entries) {
+      tabBar.classList.toggle('is-stuck', !entries[0].isIntersecting);
+    }).observe(sentinel);
+  }
+
+  // Singapore time (UTC+8, no daylight saving)
+  function sgNow() {
+    var ms = typeof window.AGM_NOW === 'function' ? window.AGM_NOW() : Date.now();
+    var d = new Date(ms + 8 * 3600 * 1000);
+    return { date: d.toISOString().slice(0, 10), min: d.getUTCHours() * 60 + d.getUTCMinutes() };
+  }
+  function fmt(m) {
+    var h = Math.floor(m / 60), mm = m % 60;
+    return (h % 12 || 12) + ':' + (mm < 10 ? '0' : '') + mm + ' ' + (h < 12 ? 'am' : 'pm');
+  }
+  function label(r) {
+    var eb = r.querySelector('.s-eyebrow');
+    var title = r.querySelector('.s-title').childNodes[0].textContent.trim();
+    return (eb && title.length <= 40 ? eb.textContent.trim() + ': ' : '') + title;
+  }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  var firstJump = null;
+  function tick() {
+    var now = sgNow();
+    var current = [], next = [];
+    rows.forEach(function (r) {
+      r.classList.remove('is-now', 'is-next', 'is-past');
+      var f = r.querySelector('.flag'); f.hidden = true; f.textContent = '';
+      if (r.dataset.date !== now.date) return;
+      var s = +r.dataset.s, e = +r.dataset.e;
+      if (s <= now.min && now.min < e) current.push(r);
+      else if (e <= now.min) r.classList.add('is-past');
+    });
+    var upcoming = rows.filter(function (r) { return r.dataset.date === now.date && +r.dataset.s > now.min; });
+    if (upcoming.length) {
+      var ns = Math.min.apply(null, upcoming.map(function (r) { return +r.dataset.s; }));
+      next = upcoming.filter(function (r) { return +r.dataset.s === ns; });
+    }
+    current.forEach(function (r) { r.classList.add('is-now'); var f = r.querySelector('.flag'); f.textContent = 'Now'; f.hidden = false; });
+    next.forEach(function (r) { r.classList.add('is-next'); var f = r.querySelector('.flag'); f.textContent = 'Next'; f.hidden = false; });
+
+    if (current.length || next.length) {
+      liveNow.parentNode.hidden = !current.length;
+      liveNow.innerHTML = current.map(function (r) {
+        return '<span class="li">' + esc(label(r)) + (r.dataset.where ? ' <small>· ' + esc(r.dataset.where) + '</small>' : '') + '</span>';
+      }).join('');
+      liveNext.parentNode.hidden = !next.length;
+      liveNext.innerHTML = next.length ? '<span class="li">' + esc(fmt(+next[0].dataset.s)) + ' · ' + next.map(function (r) { return esc(label(r)); }).join(' / ') + '</span>' : '';
+      firstJump = current[0] || next[0];
+      live.hidden = false;
+    } else {
+      live.hidden = true;
+      firstJump = null;
+    }
+    return now;
+  }
+
+  live.addEventListener('click', function () {
+    if (!firstJump) return;
+    var day = firstJump.closest('.day');
+    if (day && day.hidden) show(day.id, true);
+    firstJump.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  var now = tick();
+  var fromHash = (location.hash || '').slice(1);
+  if (fromHash && document.getElementById(fromHash) && document.getElementById(fromHash).classList.contains('day')) show(fromHash);
+  else if (DAY_BY_DATE[now.date]) show(DAY_BY_DATE[now.date]);
+
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  window.AGM = { tick: tick, show: show, dayFor: function (date) { return DAY_BY_DATE[date]; } };
+  setInterval(tick, 30000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) tick(); });
+})();
+
+</script>
+</body>
+</html>
