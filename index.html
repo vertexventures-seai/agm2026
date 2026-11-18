@@ -259,12 +259,16 @@ a { color: var(--cyan); }
 }
 .map-link:hover { background: #8fe0ff; }
 .floors { display: grid; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--raise); }
-.floors li { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr); }
+.floors li { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); }
 .floors li + li { border-top: 1px solid var(--line); }
 .lvl {
-  display: grid; place-items: center;
-  font: 700 20px/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--cyan);
+  display: grid; place-content: center; justify-items: center; gap: 3px; padding-block: 8px;
+  font: 700 22px/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--cyan);
   background: var(--raise-strong); text-shadow: 0 0 12px rgba(95, 210, 255, .6);
+}
+.lvl small {
+  font: 700 9.5px/1 var(--font-display); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-2); text-shadow: none;
 }
 .floors li > div { padding: 11px 14px; display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
 .floors b { color: var(--ink); font-weight: 600; margin-right: 6px; }
@@ -381,9 +385,9 @@ a { color: var(--cyan); }
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Four+Seasons+Hotel+Singapore+190+Orchard+Boulevard" target="_blank" rel="noopener">Open in Google Maps <span aria-hidden="true">↗</span></a>
       </div>
       <ol class="floors" aria-label="Rooms by floor">
-        <li><span class="lvl">20</span><div><p><b>Windows West</b>LPAC meeting (Mon) · Founders Day (Tue)</p><p><b>Windows East</b>Laser tag (Tue)</p></div></li>
-        <li><span class="lvl">3</span><div><p><b>Nobu</b>Networking dinner (Mon)</p></div></li>
-        <li><span class="lvl">2</span><div><p><b>Ballroom</b>Annual Meeting (Mon)</p><p><b>Ballroom Foyer</b>Founder check-in, lunch and tea breaks (Mon)</p></div></li>
+        <li><span class="lvl" aria-label="Level 20"><small>Level</small>20</span><div><p><b>Windows West</b>LPAC meeting (Mon) · Founders Day (Tue)</p><p><b>Windows East</b>Laser tag (Tue)</p></div></li>
+        <li><span class="lvl" aria-label="Level 3"><small>Level</small>3</span><div><p><b>Nobu</b>Networking dinner (Mon)</p></div></li>
+        <li><span class="lvl" aria-label="Level 2"><small>Level</small>2</span><div><p><b>Ballroom</b>Annual Meeting (Mon)</p><p><b>Ballroom Foyer</b>Founder check-in, lunch and tea breaks (Mon)</p></div></li>
       </ol>
     </section>
   </aside>
@@ -528,7 +532,7 @@ a { color: var(--cyan); }
 
 <footer class="foot">
   <p><b>Vertex Ventures Southeast Asia &amp; India</b> · Annual Meeting 2026</p>
-  <p>Programme as of 17 November 2026 and subject to change. All times are Singapore time.</p>
+  <p>All times are Singapore time.</p>
 </footer>
 
 <script>
